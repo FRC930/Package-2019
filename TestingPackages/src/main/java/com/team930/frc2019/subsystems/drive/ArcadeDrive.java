@@ -2,8 +2,15 @@ package com.team930.frc2019.subsystems.drive;
 
 public class ArcadeDrive extends Drive {
 
-    public ArcadeDrive(double deadband) {
-        super(deadband);
+    private double throttle = 0;
+    private double turn = 0;
+
+    public ArcadeDrive() {
+        super();
+    }
+
+    public ArcadeDrive(double deadband, double throttle, double turn) {
+        super(deadband, throttle, turn);
     }
 
     public void init() {
@@ -12,13 +19,13 @@ public class ArcadeDrive extends Drive {
 
     public void run() {
 
-        double throttle = Math.pow(super.leftStick, 3);
-        double turn = -1 * Math.pow(super.rightStick, 3);
+        throttle = Math.pow(throttle, 3);
+        turn = -1 * Math.pow(turn, 3);
 
-        if ((Math.abs(throttle) < 0.00124)) {
+        if ((Math.abs(throttle) < super.getDeadband())) {
             throttle = 0;
         }
-        if ((Math.abs(turn) < 0.00124)) {
+        if ((Math.abs(turn) < super.getDeadband())) {
             turn = 0;
         }
 

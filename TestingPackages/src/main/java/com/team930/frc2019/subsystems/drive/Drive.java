@@ -4,12 +4,20 @@ import com.team930.frc2019.subsystems.*;
 
 public abstract class Drive extends Subsystem {
 
-    protected double leftStick;
-    protected double rightStick;
-    private double deadband;
+    protected double leftStick = 0;
+    protected double rightStick = 0;
+    private double deadband = 0;
 
-    public Drive(double deadband) {
+    public Drive() {
+        this.leftStick = 0;
+        this.rightStick = 0;
+        this.deadband = 0;
+    }
+
+    public Drive(double deadband, double leftStick, double rightStick) {
         this.deadband = deadband;
+        this.leftStick = leftStick;
+        this.rightStick = rightStick;
     }
 
     public void init() {

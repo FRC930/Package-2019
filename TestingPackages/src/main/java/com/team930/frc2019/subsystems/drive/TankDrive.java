@@ -2,8 +2,11 @@ package com.team930.frc2019.subsystems.drive;
 
 public class TankDrive extends Drive {
 
-    public TankDrive(double deadband) {
-        super(deadband);
+    private double leftThrottle = 0;
+    private double rightThrottle = 0;
+
+    public TankDrive(double deadband, double leftThrottle, double rightThrottle) {
+        super(deadband, leftThrottle, rightThrottle);
     }
 
     public void init() {
@@ -12,8 +15,8 @@ public class TankDrive extends Drive {
 
     public void run() {
 
-        double leftThrottle = -1 * Math.pow(super.leftStick, 3);
-        double rightThrottle = -1 * Math.pow(super.rightStick, 3);
+        double leftThrottle = -1 * Math.pow(this.leftThrottle, 3);
+        double rightThrottle = -1 * Math.pow(this.rightThrottle, 3);
 
         if ((Math.abs(leftThrottle) < super.getDeadband())) {
             leftThrottle = 0;
