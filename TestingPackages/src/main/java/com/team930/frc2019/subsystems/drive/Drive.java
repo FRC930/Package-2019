@@ -2,7 +2,7 @@ package com.team930.frc2019.subsystems.drive;
 
 import com.team930.frc2019.subsystems.*;
 
-public abstract class Drive extends Subsystem {
+public abstract class Drive implements Subsystem {
 
     protected double leftStick = 0;
     protected double rightStick = 0;
@@ -34,6 +34,14 @@ public abstract class Drive extends Subsystem {
 
     public void setRightStick(double right) {
         rightStick = right;
+    }
+
+    public double getLeftStick() {
+        return leftStick;
+    }
+
+    public double getRightStick() {
+        return rightStick;
     }
 
     public void setDeadband(double deadband) {

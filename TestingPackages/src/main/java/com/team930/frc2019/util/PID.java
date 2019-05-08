@@ -1,6 +1,7 @@
 package com.team930.frc2019.util;
 
 public class PID {
+
     private double kP;
     private double kI;
     private double kD;
@@ -10,14 +11,24 @@ public class PID {
     private double derivative;
     private double prevError;
 
+    public PID() {
+        this.kP = 0;
+        this.kI = 0;
+        this.kD = 0;
+        this.dT = 0;
+        this.integral = 0;
+        this.derivative = 0;
+        this.prevError = 0;
+    }
+
     public PID(double kP, double kI, double kD, double dT) {
         this.kP = kP;
         this.kI = kI;
         this.kD = kD;
         this.dT = dT;
-        integral = 0;
-        derivative = 0;
-        prevError = 0;
+        this.integral = 0;
+        this.derivative = 0;
+        this.prevError = 0;
     }
 
     public void setKp(double kP) {

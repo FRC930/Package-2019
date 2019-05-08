@@ -2,6 +2,8 @@ package com.team930.frc2019.subsystems.drive;
 
 public class ArcadeDrive extends Drive {
 
+    private static ArcadeDrive instance;
+    
     private double throttle = 0;
     private double turn = 0;
 
@@ -11,6 +13,8 @@ public class ArcadeDrive extends Drive {
 
     public ArcadeDrive(double deadband, double throttle, double turn) {
         super(deadband, throttle, turn);
+        this.throttle = throttle;
+        this.turn = turn;
     }
 
     public void init() {
@@ -36,6 +40,13 @@ public class ArcadeDrive extends Drive {
     public void runAt(double leftSpeed, double rightSpeed) {
         // left.set(leftSpeed);
         // right.set(rightSpeed);
+    }
+
+    public static ArcadeDrive getInstance() {
+        if (instance == null) {
+             instance = new ArcadeDrive();
+        }
+        return instance;
     }
 
 }

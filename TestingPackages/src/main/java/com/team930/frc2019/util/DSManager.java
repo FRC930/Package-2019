@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class DSManager {
 
+	private static DSManager instance;
+
     // Driver controller
     private Joystick driver = new Joystick(DSManagerConstants.DRIVER_CONTROLLER_ID);
     // CoDriver controller
@@ -93,7 +95,62 @@ public class DSManager {
 		public boolean getCoDriverButtonY() {
 			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_Y);
 		}
+
+		// Button LB
+		public boolean getDriverButtonLB() {
+			return driver.getRawButton(DSManagerConstants.DRIVER_BUTTON_LB);
+		}
+		public boolean getCoDriverButtonLB() {
+			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_LB);
+		}
+
+		// Button RB
+		public boolean getDriverButtonRB() {
+			return driver.getRawButton(DSManagerConstants.DRIVER_BUTTON_RB);
+		}
+		public boolean getCoDriverButtonRB() {
+			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_RB);
+		}
+
+		// Button BACK
+		public boolean getDriverButtonBack() {
+			return driver.getRawButton(DSManagerConstants.DRIVER_BUTTON_BACK);
+		}
+		public boolean getCoDriverButtonBack() {
+			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_BACK);
+		}
+
+		// Button START
+		public boolean getDriverButtonStart() {
+			return driver.getRawButton(DSManagerConstants.DRIVER_BUTTON_START);
+		}
+		public boolean getCoDriverButtonStart() {
+			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_START);
+		}
+
+		// Button Left Joystick
+		public boolean getDriverButtonLeftStick() {
+			return driver.getRawButton(DSManagerConstants.DRIVER_BUTTON_LEFT_STICK);
+		}
+		public boolean getCoDriverButtonLeftStick() {
+			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_LEFT_STICK);
+		}
+
+		// Button Right Joystick
+		public boolean getDriverButtonRightStick() {
+			return driver.getRawButton(DSManagerConstants.DRIVER_BUTTON_RIGHT_STICK);
+		}
+		public boolean getCoDriverButtonRightStick() {
+			return coDriver.getRawButton(DSManagerConstants.CODRIVER_BUTTON_RIGHT_STICK);
+		}
 	// Buttons ---------------------------------------------------------------]
+
+	public static DSManager getInstance() {
+        if (instance == null) {
+             instance = new DSManager();
+        }
+        return instance;
+    }
 
     public class DSManagerConstants {
     // DRIVER Controller Values-----------------------------[ 

@@ -3,14 +3,17 @@ package com.team930.frc2019;
 import edu.wpi.first.wpilibj.TimedRobot;
 import com.team930.frc2019.subsystems.*;
 import com.team930.frc2019.subsystems.drive.*;
+import com.team930.frc2019.util.*;
 
 public class Robot extends TimedRobot {
 
-    //private Drive mDrive = Drive.getInstance(); 
-    //private ArcadeDrive mDrive = new ArcadeDrive(Constants.DRIVE_DEADBAND);
+    private ArcadeDrive mDrive = ArcadeDrive.getInstance();
+    private TeleopHandler mTeleopHandler = TeleopHandler.getInstance();
 
     @Override
     public void robotInit() {
+
+        mDrive.init();
 
     }
 
@@ -27,10 +30,14 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopInit() {
 
+        mTeleopHandler.init();
+
     }
 
     @Override
     public void teleopPeriodic() {
+
+        mTeleopHandler.run();
 
     }
 
