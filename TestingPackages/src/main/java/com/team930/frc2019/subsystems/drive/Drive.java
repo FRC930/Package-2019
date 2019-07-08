@@ -8,13 +8,13 @@ public abstract class Drive implements Subsystem {
     protected double rightStick = 0;
     private double deadband = 0;
 
-    public Drive() {
+    protected Drive() {
         this.leftStick = 0;
         this.rightStick = 0;
         this.deadband = 0;
     }
 
-    public Drive(double deadband, double leftStick, double rightStick) {
+    protected Drive(double deadband, double leftStick, double rightStick) {
         this.deadband = deadband;
         this.leftStick = leftStick;
         this.rightStick = rightStick;

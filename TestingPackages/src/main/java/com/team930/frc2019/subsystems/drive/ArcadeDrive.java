@@ -7,11 +7,11 @@ public class ArcadeDrive extends Drive {
     private double throttle = 0;
     private double turn = 0;
 
-    public ArcadeDrive() {
+    private ArcadeDrive() {
         super();
     }
 
-    public ArcadeDrive(double deadband, double throttle, double turn) {
+    private ArcadeDrive(double deadband, double throttle, double turn) {
         super(deadband, throttle, turn);
         this.throttle = throttle;
         this.turn = turn;

@@ -7,11 +7,11 @@ public class TankDrive extends Drive {
     private double leftThrottle = 0;
     private double rightThrottle = 0;
 
-    public TankDrive() {
+    private TankDrive() {
         super();
     }
 
-    public TankDrive(double deadband, double leftThrottle, double rightThrottle) {
+    private TankDrive(double deadband, double leftThrottle, double rightThrottle) {
         super(deadband, leftThrottle, rightThrottle);
         this.leftThrottle = leftThrottle;
         this.rightThrottle = rightThrottle;
